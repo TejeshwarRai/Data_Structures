@@ -16,7 +16,7 @@ class Product:
         self.nextProduct = nextProduct
 class LinkedList:
 
-    head = None                 #property of class not object... not the case in java
+    head = None                 # property of class not object... not the case in java
     lastNode = None
     __size = 0
 
@@ -39,6 +39,18 @@ class LinkedList:
 
         print()
 
+    def appendBeginning(self, object):
+
+        LinkedList.__size += 1
+        node = Node(object, None)
+        print(">> [APPEND] Node:", node, "[NEXT NODE]:", node.nextNode)
+
+        temp = LinkedList.head
+        LinkedList.head = node
+        node.nextNode = temp
+
+        print()
+
     def printList(self):
 
         temp = LinkedList.head
@@ -57,10 +69,15 @@ class LinkedList:
 
 # Object of LinkedList
 lRef = LinkedList()
+
 lRef.append(85)
 lRef.append(80)
 lRef.append(55)
 lRef.append(78)
+
+lRef.printList()
+
+lRef.appendBeginning(98)
 
 lRef.printList()
 
