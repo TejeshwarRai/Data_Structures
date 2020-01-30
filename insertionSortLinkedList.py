@@ -176,15 +176,8 @@ class LinkedList:
 
     def insertionSort(self):
 
-        sortedListHead = None
         current = LinkedList.head
 
-        while current.nextNode is not None:
-
-            sortedListHead = self.sortRecursive(sortedListHead, current)
-            current = current.nextNode
-
-        return sortedListHead
 
     def sortRecursive(self, sortedListHead, current):
 
